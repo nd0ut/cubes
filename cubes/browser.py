@@ -691,7 +691,7 @@ class Cell(object):
 CUT_STRING_SEPARATOR = '|'
 DIMENSION_STRING_SEPARATOR = ':'
 PATH_STRING_SEPARATOR = ','
-RANGE_CUT_SEPARATOR = '-'
+RANGE_CUT_SEPARATOR = '--'
 SET_CUT_SEPARATOR = ';'
 
 """
@@ -751,8 +751,8 @@ def cuts_from_string(string):
 
 re_element = re.compile(r"^[\w,.]*$")
 re_point = re.compile(r"^[\w,.]*$")
-re_set = re.compile(r"^([\w,.]+)(;([\w,.]+))+$")
-re_range = re.compile(r"^([\w,.]*)-([\w,.]*)$")
+re_set = re.compile(r"^([\w,.]+)(;([\w,.-]+))+$")
+re_range = re.compile(r"^(-?[\w,.]*)-([\w,.-]*)$")
 
 def cut_from_string(dimension, string):
     """Returns a cut from `string` with dimension `dimension. The string

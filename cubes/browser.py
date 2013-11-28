@@ -749,10 +749,10 @@ def cuts_from_string(string):
 
     return cuts
 
-re_element = re.compile(r"^[\w,]*$")
-re_point = re.compile(r"^[\w,]*$")
-re_set = re.compile(r"^([\w,]+)(;([\w,]+))+$")
-re_range = re.compile(r"^([\w,]*)-([\w,]*)$")
+re_element = re.compile(r"^[\w,.]*$")
+re_point = re.compile(r"^[\w,.]*$")
+re_set = re.compile(r"^([\w,.]+)(;([\w,.]+))+$")
+re_range = re.compile(r"^([\w,.]*)-([\w,.]*)$")
 
 def cut_from_string(dimension, string):
     """Returns a cut from `string` with dimension `dimension. The string

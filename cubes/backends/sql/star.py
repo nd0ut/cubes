@@ -379,7 +379,7 @@ class SnowflakeBrowser(AggregationBrowser):
         tables = set()
         aliases = set()
         alias_map = {}
-        # 
+        #
         for join in self.mapper.joins:
             self.logger.debug("join: %s" % (join, ))
 
@@ -510,7 +510,7 @@ class QueryContext(object):
         #
         # table_aliases contains mapping between aliased table name and real
         # table name with alias:
-        # 
+        #
         #       (schema, aliased_name) --> (schema, real_name, alias)
         #
         self.table_aliases = {
@@ -580,8 +580,8 @@ class QueryContext(object):
         # Added total record count
         # TODO: make this label configurable (should we?)
         # TODO: make presence of this configurable (shoud we?)
-        rcount_label = "record_count"
-        selection.append(sql.functions.count().label(rcount_label))
+        # rcount_label = "record_count"
+        # selection.append(sql.functions.count().label(rcount_label))
 
         select = sql.expression.select(selection,
                                     from_obj=join_expression,
@@ -1154,7 +1154,7 @@ class AggregatedCubeBrowser(AggregationBrowser):
         self.context = QueryContext(self.cube, self.mapper,
                                       metadata=self.metadata)
 
-        # Map: logical attribute --> 
+        # Map: logical attribute -->
         self.attribute_columns = {}
         self.alias_columns
 
